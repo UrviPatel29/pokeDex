@@ -97,6 +97,10 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
                 this.ListPokemon = [];
                 this.ListPokemon = serachedPokemon
             }
+        }, error => {
+            if(error && error.status) {
+                console.log("Error")
+            }
         })
     }
     getPokemonType() {
@@ -105,6 +109,10 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
             res.map((ele: any) => {
                 this.optionPokemon.push({ label: ele, value: ele })
             });
+        }, error => {
+            if(error && error.status) {
+                console.log("Error")
+            }
         })
     }
     gridView(e: string) {
@@ -122,11 +130,19 @@ export class PokemonListComponent implements OnInit, AfterViewInit {
                         this.getAllPokemon()
                     }
 
+                }, error => {
+                    if(error && error.status) {
+                        console.log("Error")
+                    }
                 })
             } else {
                 this.pokeListService.dislikeButtonClicked(val.id).subscribe(res => {
                     if (res) {
                         this.getAllPokemon()
+                    }
+                }, error => {
+                    if(error && error.status) {
+                        console.log("Error")
                     }
                 })
             }

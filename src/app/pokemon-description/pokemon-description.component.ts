@@ -40,13 +40,21 @@ export class PokemonDescriptionComponent implements OnInit {
           if (res) {
             this.getPokemonDetails()
           }
-        })
+        }, error => {
+          if(error && error.status) {
+              console.log("Error")
+          }
+      });
       } else {
         this.pokeListService.dislikeButtonClicked(val.id).subscribe(res => {
           if (res) {
             this.getPokemonDetails()
           }
-        })
+        }, error => {
+          if(error && error.status) {
+              console.log("Error")
+          }
+      })
       }
     }
   }
