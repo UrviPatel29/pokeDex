@@ -1,0 +1,94 @@
+.card {
+    padding: 0px;
+}
+button {
+    border: none;
+    background: none;
+}
+.gridImg {
+    height:300px;
+    max-width:300px;
+}
+.marginEdjust {
+    margin-top: 20px;
+    margin-bottom: 10px;;
+}
+.labelStyle {
+    font-weight: bold;
+}
+.like {
+    color:darkred;
+}
+.likebutton{
+    background:none;
+    border:none;
+}
+.dislike {
+    background:none;
+    columns: none;
+}
+ ::ng-deep .cpStyle .p-progressbar .p-progressbar-value {
+    background-color: green;
+ }
+ p-progressbar {
+     padding-top: 9px;;
+ }
+ div {
+     font-size:12px
+ }
+ .paddingAdjust {
+     padding: 0px;
+ }
+ .flex-container{
+    overflow: hidden; 
+
+}
+.flexBorder {
+  border: 1px solid lightgray;
+  padding:0;
+  
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding:0px;
+}
+.flex-container > .flexClass {
+    width: 200px;
+    margin: 15px; 
+    flex: 0 3 auto;
+}
+.gridImgEve {
+    height:100px;
+    max-width:150px;
+}
+.gridImgEvemain {
+    height:300px;
+    max-width:420px;
+
+}
+.card-footer {
+    background-color:rgb(250, 245, 245);
+}
+.padEdjust {
+    padding: 15px 15px 15px 15px;
+
+}
+.padEdjustText {
+    padding: 10px;
+    background-color: rgb(250, 245, 245);
+}
+.flexBorder {
+  border: 1px solid lightgray;
+}
+.padEdjust {
+    padding: 15px 15px 15px 15px;
+
+}
+.paddingAdjust {
+    padding: 0px;;
+}
+.gridImgBtn {
+    background:none;
+    border:none;
+}

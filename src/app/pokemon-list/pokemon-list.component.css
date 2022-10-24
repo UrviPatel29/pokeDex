@@ -1,0 +1,146 @@
+.adjustMargin {
+    margin-top:15;
+    margin-bottom: 15px;;
+}
+.marginEdjust {
+    margin:15px
+}
+.buttonListGrid {
+    border:none;
+    background: none;
+}
+.paddingBtnGrid {
+    padding-top: 5px;
+}
+textarea:focus, input:focus, .p-dropdown:focus, button:focus{
+    outline: none;
+}
+.searchEdjust {
+    border:none;
+    background-color: rgb(250, 245, 245);
+
+}
+:host ::ng-deep .p-dropdown {
+    border:none;
+    background-color: rgb(250, 245, 245);
+    width: 100% !important
+}
+
+.like {
+    color:darkred;
+}
+.likebutton{
+    background:none;
+    border:none;
+}
+.dislike {
+    background:none;
+    columns: none;
+    /* border: 1px solid darkred; */
+}
+
+.row {
+    margin-top:20px;
+    /* margin-left:2px;
+    margin-right:2px; */
+
+}
+.gridImg {
+    height:100px;
+    max-width:180px;
+}
+.listImg {
+    height:55px;
+    /* max-width:100px; */
+}
+.listImgBtn {
+    height:45px;
+    max-width:100px;
+    background:none;
+    border:none;
+}
+.gridImgBtn {
+    background:none;
+    border:none;
+}
+label {
+    font-size:15px
+}
+.footer {
+    background: rgb(250, 245, 245);;
+
+}
+a {
+    color:black
+
+}
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    background-color: rgb(120, 184, 3);
+}
+.nav-pills {
+    border:1px solid rgb(120, 184, 3);
+
+}
+
+li > a.active {
+   border-radius:0px;
+  }
+.marEdjust {
+    margin-left: 10px;;
+}
+
+
+
+.padEdjust {
+    padding: 15px;
+
+}
+.padEdjustText {
+    padding: 10px;
+    background-color: rgb(250, 245, 245);
+}
+.flexBorder {
+  border: 1px solid lightgray;
+}
+.flexClass:hover {
+    transform: scale(1.1);
+}
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden; 
+}
+.flex-container > .flexClass {
+    width: 200px;
+    margin: 15px; 
+    flex: 0 3 22.5%;
+}
+@media only screen and (min-width: 400px) and (max-width: 420px){ 
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; 
+    }
+    .flex-container > .flexClass {
+        flex-basis: 40%;    
+    }
+    .gridImg {
+        height:100px;
+        width:90px;
+    }
+}
+
+@media only screen and (max-width: 1015px) and (min-width: 420px)  {
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden; 
+    }
+    .flex-container > .flexClass {
+        flex-basis: 21%;    
+    }
+    .gridImg {
+        height:100px;
+        width:90px;
+    }
+}

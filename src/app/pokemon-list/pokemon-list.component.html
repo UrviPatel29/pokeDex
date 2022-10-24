@@ -1,0 +1,68 @@
+<div class="row">
+    <ul *ngIf="!favoriteClicked" class="adjustMargin nav nav-pills nav-justified">
+        <li class="nav-item">
+            <a class="nav-link active" (click)="navClicked('All')">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" (click)="navClicked('Fav')">Favorite</a>
+        </li>
+    </ul>
+    <ul *ngIf="favoriteClicked" class="adjustMargin nav nav-pills nav-justified">
+        <li class="nav-item">
+            <a class="nav-link" (click)="navClicked('All')">All</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" (click)="navClicked('Fav')">Favorite</a>
+        </li>
+    </ul>
+</div>
+<div class="row marginEdjust" [formGroup]="pokemonControls">
+
+    <input type="text" formControlName="searchBar" class="col-6 searchEdjust" pInput
+        #input placeholder="Search" />
+    <p-dropdown class="col-3 dropEdjust" scrollHeight="250px" (onChange)="dropDownSelected($event.value)"
+        [options]="optionPokemon" placeholder="Type" optionLabel="label" formControlName="typePokemon"></p-dropdown>
+    <div class="col-3">
+        <button class="buttonListGrid paddingBtnGrid" (click)="gridView('grid')"><i class="fa fa-th fa-lg"></i></button>
+        <button class="buttonListGrid paddingBtnGrid" (click)="gridView('list')"><i
+                class="fa fa-bars fa-lg"></i></button>
+    </div>
+</div>
+<div class="row">
+    <div *ngIf="gridViewToggle" class="flex-container">
+        <div *ngFor="let item of ListPokemon" class="flexClass flexBorder">
+            <div class="padEdjust">
+                <button class="col-12 gridImgBtn" (click)="imgClicked(item)">
+                    <img class="gridImg" src={{item.image}} alt="Logo" />
+                </button>
+            </div>
+            <div class="padEdjustText">
+                <div><label>{{item.name}}</label></div>
+                <div class="" style="float:right">
+                    <button class="likebutton" (click)="likeButtonClicked(item)">
+                        <i *ngIf="item.isFavorite" class="like fa fa-heart" aria-hidden="true"></i>
+                        <i *ngIf="!item.isFavorite" class="dislike fa fa-heart" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div><label>{{item.types}}</label></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="" *ngIf="!gridViewToggle">
+    <div class="marEdjust row" *ngFor="let item of ListPokemon">
+        <div class="col-3">
+            <button class="listImgBtn col-12" (click)="imgClicked(item)"><img class="listImg col-12" src={{item.image}}
+                    alt="Logo" /></button>
+        </div>
+        <div class="col-7">{{item.name}} <br />
+            {{item.types}}
+        </div>
+        <div class="col-1" style="float:right">
+            <button class="likebutton" (click)="likeButtonClicked(item)">
+                <i *ngIf="item.isFavorite" class="like fa fa-heart" aria-hidden="true"></i>
+                <i *ngIf="!item.isFavorite" class="dislike fa fa-heart" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</div>

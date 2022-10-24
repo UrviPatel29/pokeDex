@@ -1,0 +1,74 @@
+<div class="row">
+    <div class="col-1"></div>
+    <div class="card marginEdjust col-10">
+        <div class="row">
+            <div class="col-3"></div>
+            <img class="col-6 gridImgEvemain" src={{pokemonDesc.image}} alt="Logo" />
+            <div class="col-3"></div>
+        </div>
+        <div class="row">
+        </div>
+        <div class="card-footer" style="border: 1px solid lightgray;">
+            <div class="row">
+                <div class="col-9"><label class="labelStyle">{{pokemonDesc.name}}</label>
+                    <div><label>{{pokemonDesc.types}}</label></div>
+                </div>
+                <div class="col-3"> <button *ngIf="pokemonDesc.isFavorite" style="float: right;"
+                        (click)="likeButtonClicked(pokemonDesc)" class="likebutton">
+                        <i class="like fa fa-heart" aria-hidden="true"></i>
+                    </button>
+
+                    <button *ngIf="!pokemonDesc.isFavorite" style="float: right;"
+                        (click)="likeButtonClicked(pokemonDesc)" class="likebutton">
+                        <i class="dislike fa fa-heart" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row marginEdjust">
+                <p-progressBar class="col-10 cpStyle" [value]="progressValueCP" [style]="{'height': '8px'}">
+                </p-progressBar>
+                <div class="col-2 labelStyle paddingAdjust"><label>CP: </label>{{progressValueCP}}</div>
+            </div>
+            <div class="row marginEdjust">
+                <p-progressBar class="col-10" [value]="progressValueHP" [style]="{'height': '8px'}"></p-progressBar>
+                <div class="col-2 labelStyle paddingAdjust"><label>HP: </label>{{progressValueHP}}</div>
+            </div>
+            <div class="row marginEdjust">
+                <div class="col-6"><label class="labelStyle">Height</label>
+                    <div>{{pokemonDesc?.height?.minimum }} - {{ pokemonDesc?.height?.maximum}}</div>
+                </div>
+                <div class="col-6"><label class="labelStyle">Weight</label>
+                    <div>{{ pokemonDesc?.weight?.minimum }} - {{ pokemonDesc?.weight?.maximum}}</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+</div>
+<div class="row">
+    <div class="col-1"></div>
+    <label *ngIf="pokemonDesc?.evolutions?.length>0" class="col-10 paddingAdjust labelStyle">Evolutions</label>
+    <div class="col-1"></div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 flex-container">
+            <div *ngFor="let item of pokemonDesc.evolutions" style="margin-left:0px;" class="flexClass flexBorder">
+                <div class="padEdjust">
+                    <img class="col-12 gridImgEve" src={{item.image}} alt="Logo" />
+                </div>
+                <div class="padEdjustText">
+                    <div><label>{{item.name}}</label></div>
+                    <div class="" style="float:right">
+                        <button class="likebutton" (click)="likeButtonClicked(item)">
+                            <i *ngIf="item.isFavorite" class="like fa fa-heart" aria-hidden="true"></i>
+                            <i *ngIf="!item.isFavorite" class="dislike fa fa-heart" aria-hidden="true"></i>
+
+                        </button>
+                    </div>
+                    <div><label>{{item.types}}</label></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
