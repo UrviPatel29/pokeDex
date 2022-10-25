@@ -137,7 +137,7 @@ li > a.active {
         overflow: hidden; 
     }
     .flex-container > .flexClass {
-        flex-basis: 21%;    
+        flex-basis: 43%;    
     }
     .gridImg {
         height:100px;
